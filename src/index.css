@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant light (&:is(.light *));
+
+:root {
+    --font-sans: "Edu SA Beginner", cursive;
+    --primary: #2069FA;
+    --primary-foreground: #fff;
+    --secondary: #FFFFFF;
+    --secondary-foreground: #000;
+}
+
+.light {
+    --primary: #FFDCFA;
+    --primary-foreground: #000;
+    --secondary: #000000;
+    --secondary-foreground: #fff;
+}
+
+@theme inline {
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+}
+
+@layer base {
+    body {
+        @apply bg-primary text-primary-foreground;
+    }
+}
